@@ -1,40 +1,48 @@
 @import '../colors';
+@import '../mixins';
 
 .controls {
+    @include flex-center-col;
     width: 600px;
     height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     font-size: 2rem;
+}
 
-    input[type=text] {
-        font-size: 1.5rem;
-        width: 70%;
-        text-align: center;
-        padding: 0.4rem;
-        border-style: none;
-        border-bottom: 4px solid $black;
-        background-color: transparent;
+.block {
+    @include flex-center-col;
+}
 
-        &:focus {
-            outline: none;
-        }
 
+.input-box {
+    @include flex-center-col;
+    width: 100%;
+}
+
+input[type=text] {
+    font-size: 1.5rem;
+    width: 70%;
+    text-align: center;
+    padding: 0.4rem;
+    border-style: none;
+    border-bottom: 4px solid $black;
+    background-color: transparent;
+
+
+    &:focus {
+        outline: none;        
     }
+}
 
 
-    input[type=text]:focus+.underline {
-        transform: scale(1);
-    }
+input[type=text]:focus+.underline {
+    transform: scale(1);
+}
 
 
-    .underline {
-        width: 70%;
-        border-bottom: 4px solid $pink;
-        margin-top: -4px;
-        transform: scale(0, 1);
-        transition: all 500ms linear;
-    }
+.underline {
+    width: 70%;
+    border-bottom: 4px solid $pink;
+    margin-top: -4px;
+    transform: scale(0, 1);
+    transition: all 250ms linear;
 }
