@@ -16,7 +16,7 @@ function controls() {
             <div>Select font</div>
 
             <label htmlFor='color'>color:</label>
-            <input type='color' value='#000' />
+            <input type='color' value='#ffffff' />
 
             <label htmlFor="font-size">font size:</label>
             <button>-</button>

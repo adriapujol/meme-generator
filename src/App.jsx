@@ -1,14 +1,15 @@
 import React from 'react';
-import Controls from './components/Controls';
-import Image from './components/Image';
+import './App.scss';
+import Landing from './Pages/Landing';
+import Memegen from './Pages/Memegen';
 
 function App() {
     return (
         <div className='container'>
-            <div className="content-wrapper">
-                <Image />
-                <Controls />
-            </div>
+            <nav>About</nav>
+            <Landing />
+            <Memegen />
+            <footer>by Adrià Pujol</footer>
         </div>
     )
 }
