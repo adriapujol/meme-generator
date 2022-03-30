@@ -1,0 +1,12 @@
+figure {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    img {
+        max-width: 600px;
+        max-height: 600px;
+    }
+}

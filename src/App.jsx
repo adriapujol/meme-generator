@@ -6,10 +6,10 @@ import Memegen from './Pages/Memegen';
 function App() {
     return (
         <div className='container'>
-            <nav>About</nav>
-            <Landing />
+            {/* <nav>About</nav> */}
+            {/* <Landing /> */}
             <Memegen />
-            <footer>by Adrià Pujol</footer>
+            {/* <footer>by Adrià Pujol</footer> */}
         </div>
     )
 }
