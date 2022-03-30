@@ -7,7 +7,7 @@ function Image() {
     return (
         <figure>
             <p className="meme-top-text"></p>
-            <img src={picture} alt="picture to be memed" />
+            <img src={picture} alt="to be memed" />
             <p className="meme-bottom-text"></p>
         </figure>
     )

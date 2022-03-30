@@ -3,24 +3,45 @@ import './Controls.scss';
 
 function controls() {
     return (
-        <div>
-            <input type='text' id='img-url' name='img-url' placeholder='enter image url' />
-            <button>upload</button>
+        <div className='controls'>
 
-            <input type='text' id='top-text' name='top-text' placeholder='funny top text here' />
-            <button>clear</button>
-            <input type='text' id='bottom-text' name='bottom-text' placeholder='funny bottom text here' />
-            <button>clear</button>
+            <div className="block">
+                <div className="input-box">
+                    <input type='text' id='img-url' name='img-url' placeholder='enter image url' />
+                    <span className='underline'></span>
+                </div>
+                <button className='btn-txt'>upload</button>
+            </div>
+            <div className="block">
+                <div className="input-box">
+                    <input type='text' id='top-text' name='top-text' placeholder='funny top text here' />
+                    <span className='underline'></span>
+                </div>
+                <button className='btn-txt'>X</button>
+            </div>
+            <div className="block">
+                <div className="input-box">
+                    <input type='text' id='bottom-text' name='bottom-text' placeholder='funny bottom text here' />
+                    <span className='underline'></span>
+                </div>
+                <button className='btn-txt'>X</button>
+            </div>
+            <div className="block">
+                <label htmlFor='font'>font:</label>
+                <div>Select font</div>
+            </div>
+            <div className="block">
+                <label htmlFor='color'>color:</label>
+                <input type='color' value='#ffffff' />
+            </div>
+            <div className="block">
+                <label htmlFor="font-size">font size:</label>
+                <button>-</button>
+                <button>+</button>
+            </div>
 
-            <label htmlFor='font'>font:</label>
-            <div>Select font</div>
 
-            <label htmlFor='color'>color:</label>
-            <input type='color' value='#ffffff' />
-
-            <label htmlFor="font-size">font size:</label>
-            <button>-</button>
-            <button>+</button>
+            <button>download</button>
         </div>
     )
 }
