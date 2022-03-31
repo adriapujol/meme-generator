@@ -5,12 +5,12 @@
     @include flex-center-col;
     width: 600px;
     font-size: 2rem;
-
 }
 
 .block {
     @include flex-center-row;
     width: 90%;
+    margin-bottom: 1rem;
 
     button {
         background-color: transparent;
