@@ -13,9 +13,19 @@ function Controls({ imgUrl, fontType, fontColor, fontSize, topText, bottomText, 
     const handleColor = e => {
         setFontColor(e.target.value);
     }
-    const handleSize = e => {
-        e.preventDefault();
-        setFontSize(e.target.value);
+    const handleSize = (action, count) => {
+        let total = parseFloat(count);
+        if (action === "+") {
+            if (total < 4) {
+                total += 0.5;
+            }
+        }
+        if (action === "-") {
+            if (total > 1) {
+                total -= 0.5;
+            }
+        }
+        setFontSize(total.toString());
     }
     const handleTopText = e => {
         e.preventDefault();
@@ -43,14 +53,14 @@ function Controls({ imgUrl, fontType, fontColor, fontSize, topText, bottomText, 
             </div>
             <div className="block">
                 <div className="input-box">
-                    <input type='text' id='top-text' name='top-text' placeholder='funny top text here' value={topText} onChange={handleTopText} />
+                    <input type='text' id='top-text' name='top-text' placeholder='funny top text here' maxLength={140} value={topText} onChange={handleTopText} />
                     <span className='underline'></span>
                 </div>
                 <button className='btn-txt' onClick={() => handleClearText("top")}>X</button>
             </div>
             <div className="block">
                 <div className="input-box">
-                    <input type='text' id='bottom-text' name='bottom-text' placeholder='funny bottom text here' value={bottomText} onChange={handleBottomText} />
+                    <input type='text' id='bottom-text' name='bottom-text' placeholder='funny bottom text here' maxLength={140} value={bottomText} onChange={handleBottomText} />
                     <span className='underline'></span>
                 </div>
                 <button className='btn-txt' onClick={() => handleClearText("bottom")}>X</button>
@@ -58,9 +68,9 @@ function Controls({ imgUrl, fontType, fontColor, fontSize, topText, bottomText, 
             <div className="block">
                 <label htmlFor='font'>font:</label>
                 <div>
-                    <button onClick={() => { handleType("comicsans") }}>comic sans</button>
-                    <button onClick={() => { handleType("arial") }}>arial</button>
-                    <button onClick={() => { handleType("pacifico") }}>pacifico</button>
+                    <button className={fontType === "comicsans" ? "active" : ""} onClick={() => { handleType("comicsans") }}>comic sans</button>
+                    <button className={fontType === "arial" ? "active" : ""} onClick={() => { handleType("arial") }}>arial</button>
+                    <button className={fontType === "pacifico" ? "active" : ""} onClick={() => { handleType("pacifico") }}>pacifico</button>
                 </div>
             </div>
             <div className="block">
@@ -69,14 +79,16 @@ function Controls({ imgUrl, fontType, fontColor, fontSize, topText, bottomText, 
             </div>
             <div className="block">
                 <label htmlFor="font-size">font size:</label>
-                <button>-</button>
-                <span>{fontSize}</span>
-                <button>+</button>
+                <div className="size-control">
+                    <button onClick={() => handleSize("-", fontSize)}>-</button>
+                    <span>{fontSize}</span>
+                    <button onClick={() => handleSize("+", fontSize)}>+</button>
+                </div>
             </div>
 
 
-            <button>download</button>
-        </div>
+            <button className='main-btn'>download</button>
+        </div >
     )
 }
 

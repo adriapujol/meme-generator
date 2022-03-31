@@ -8,9 +8,9 @@ function Memegen() {
     const [imgUrl, setImgUrl] = useState("");
     const [fontType, setFontType] = useState("arial");
     const [fontColor, setFontColor] = useState("#ffffff");
-    const [fontSize, setFontSize] = useState("1rem");
-    const [topText, setTopText] = useState("");
-    const [bottomText, setBottomText] = useState("");
+    const [fontSize, setFontSize] = useState("2");
+    const [topText, setTopText] = useState("Word");
+    const [bottomText, setBottomText] = useState("Why");
 
     return (
         <div className="meme-box">

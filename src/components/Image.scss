@@ -15,13 +15,14 @@ figure {
         position: absolute;
         max-width: 600px;
         word-break: break-all;
+        padding: 1.5rem;
     }
     .meme-bottom-text {
-        bottom: 1rem;
+        bottom: 0;
     }
 
     .meme-top-text {
-        top: 1rem;
+        top: 0;
     }
 }
 
