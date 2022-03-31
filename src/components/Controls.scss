@@ -22,6 +22,19 @@
 .block {
     @include flex-center-row;
     width: 90%;
+
+    div {
+        display: flex;
+        list-style: none;
+
+        button {
+            margin-left: 1rem;
+        }
+
+        .active {
+            color: $pink;
+        }
+    }
 }
 
 .input-box {
