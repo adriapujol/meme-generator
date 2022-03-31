@@ -25,6 +25,10 @@ function Controls({ imgUrl, fontType, fontColor, fontSize, topText, bottomText, 
         e.preventDefault();
         setBottomText(e.target.value);
     }
+    const handleClearText = position => {
+        if (position === "top") setTopText("");
+        if (position === "bottom") setBottomText("");
+    }
 
 
     return (
@@ -42,14 +46,14 @@ function Controls({ imgUrl, fontType, fontColor, fontSize, topText, bottomText, 
                     <input type='text' id='top-text' name='top-text' placeholder='funny top text here' value={topText} onChange={handleTopText} />
                     <span className='underline'></span>
                 </div>
-                <button className='btn-txt' >X</button>
+                <button className='btn-txt' onClick={() => handleClearText("top")}>X</button>
             </div>
             <div className="block">
                 <div className="input-box">
                     <input type='text' id='bottom-text' name='bottom-text' placeholder='funny bottom text here' value={bottomText} onChange={handleBottomText} />
                     <span className='underline'></span>
                 </div>
-                <button className='btn-txt'>X</button>
+                <button className='btn-txt' onClick={() => handleClearText("bottom")}>X</button>
             </div>
             <div className="block">
                 <label htmlFor='font'>font:</label>
