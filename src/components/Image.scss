@@ -1,13 +1,27 @@
 @import '../mixins';
 
 figure {
-    width: 600px;
-    height: 600px;
+    max-width: 600px;
+    max-height: 600px;
     @include flex-center-col;
+    position: relative;
     
     img {
         max-width: 600px;
         max-height: 600px;
+    }
+
+    p {
+        position: absolute;
+        max-width: 600px;
+        word-break: break-all;
+    }
+    .meme-bottom-text {
+        bottom: 1rem;
+    }
+
+    .meme-top-text {
+        top: 1rem;
     }
 }
 
