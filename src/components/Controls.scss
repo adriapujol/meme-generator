@@ -70,11 +70,16 @@ input[type=text]:focus+.underline {
 }
 
 .size-control {
-    width: 150px;
+    // width: 150px;
     display: flex;
     justify-content: space-between;
     span {
-        margin-left: 1rem;
+        // margin-left: 1rem;
+        text-align: center;
+        width: 60px;
+    }
+    button:last-child {
+        margin-left: 0;
     }
 }
 

@@ -14,7 +14,7 @@ function Image({ imgUrl, topText, bottomText, fontColor, fontSize, fontType }) {
     return (
         <figure>
             <p style={style} className={`meme-top-text ${fontType}`}>{topText}</p>
-            <img src={picture} alt="to be memed" />
+            <img src={imgUrl === "" ? picture2 : imgUrl} alt="to be memed" />
             <p style={style} className={`meme-bottom-text ${fontType}`}>{bottomText}</p>
         </figure >
     )

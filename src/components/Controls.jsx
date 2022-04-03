@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Controls.scss';
 
 function Controls({ imgUrl, fontType, fontColor, fontSize, topText, bottomText, setImgUrl, setFontType, setFontColor, setFontSize, setTopText, setBottomText }) {
 
-    const handleImgUrl = e => {
+    const [tempUrl, setTempUrl] = useState("");
+
+    const handleTempUrl = e => {
         e.preventDefault();
-        setImgUrl(e.taget.value);
+        setTempUrl(e.target.value);
+    }
+
+    const handleImgUrl = () => {
+        setImgUrl(tempUrl);
     }
     const handleType = font => {
         setFontType(font);
@@ -46,7 +52,7 @@ function Controls({ imgUrl, fontType, fontColor, fontSize, topText, bottomText, 
 
             <div className="block">
                 <div className="input-box">
-                    <input type='text' id='img-url' name='img-url' placeholder='enter image url' value={imgUrl} onChange={handleImgUrl} />
+                    <input type='text' id='img-url' name='img-url' placeholder='enter image url' value={tempUrl} onChange={handleTempUrl} />
                     <span className='underline'></span>
                 </div>
                 <button className='btn-txt' onClick={handleImgUrl}>upload</button>
