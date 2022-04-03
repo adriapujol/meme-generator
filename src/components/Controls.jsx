@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
+import TakePhoto from './TakePhoto';
 import './Controls.scss';
 
 function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUrl, setFontType, setFontColor, setFontSize, setTopText, setBottomText }) {
 
     const [fileName, setFileName] = useState("");
+    const [showCam, setShowCam] = useState(false);
+
+    const handlePhoto = () => {
+        setShowCam(true);
+    }
 
     const handleFile = e => {
         e.preventDefault();
@@ -48,12 +54,16 @@ function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUr
 
     return (
         <div className='controls'>
+            {showCam && <TakePhoto setImgUrl={setImgUrl} setShowCam={setShowCam} />}
             <div className="block">
-                <label htmlFor="img-file" className='file-uplad'>
-                    Upload File
+                <label htmlFor="img-file" className='file-upload'>
+                    upload file
                 </label>
                 <p>{fileName}</p>
                 <input type='file' id='img-file' name='img-file' onChange={handleFile} />
+            </div>
+            <div className="block">
+                <button className='btn-txt' onClick={handlePhoto}>take photo</button>
             </div>
             <div className="block">
                 <div className="input-box">
