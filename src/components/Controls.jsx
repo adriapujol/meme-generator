@@ -1,23 +1,16 @@
 import React, { useState } from 'react';
 import './Controls.scss';
 
-function Controls({ imgUrl, fontType, fontColor, fontSize, topText, bottomText, setImgUrl, setFontType, setFontColor, setFontSize, setTopText, setBottomText }) {
+function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUrl, setFontType, setFontColor, setFontSize, setTopText, setBottomText }) {
 
-    const [tempUrl, setTempUrl] = useState("");
+    const [fileName, setFileName] = useState("");
 
     const handleFile = e => {
         e.preventDefault();
         const fileURL = URL.createObjectURL(e.target.files[0]);
+        const tempFileName = e.target.files[0].name;
+        setFileName(tempFileName);
         setImgUrl(fileURL);
-    }
-
-    const handleTempUrl = e => {
-        e.preventDefault();
-        setTempUrl(e.target.value);
-    }
-
-    const handleImgUrl = () => {
-        setImgUrl(tempUrl);
     }
     const handleType = font => {
         setFontType(font);
@@ -56,29 +49,22 @@ function Controls({ imgUrl, fontType, fontColor, fontSize, topText, bottomText, 
     return (
         <div className='controls'>
             <div className="block">
-
-                <div className="input-box">
-                    <input type='file' id='img-file' name='img-file' onChange={handleFile} />
-                </div>
-            </div>
-            <div className="block">
-
-                <div className="input-box">
-                    <input type='text' id='img-url' name='img-url' placeholder='enter image url' value={tempUrl} onChange={handleTempUrl} />
-                    <span className='underline'></span>
-                </div>
-                <button className='btn-txt' onClick={handleImgUrl}>upload</button>
+                <label htmlFor="img-file" className='file-uplad'>
+                    Upload File
+                </label>
+                <p>{fileName}</p>
+                <input type='file' id='img-file' name='img-file' onChange={handleFile} />
             </div>
             <div className="block">
                 <div className="input-box">
-                    <input type='text' id='top-text' name='top-text' placeholder='funny top text here' maxLength={140} value={topText} onChange={handleTopText} />
+                    <input type='text' id='top-text' name='top-text' autoComplete="off" placeholder='funny top text here' maxLength={140} value={topText} onChange={handleTopText} />
                     <span className='underline'></span>
                 </div>
                 <button className='btn-txt' onClick={() => handleClearText("top")}>X</button>
             </div>
             <div className="block">
                 <div className="input-box">
-                    <input type='text' id='bottom-text' name='bottom-text' placeholder='funny bottom text here' maxLength={140} value={bottomText} onChange={handleBottomText} />
+                    <input type='text' id='bottom-text' name='bottom-text' autoComplete="off" placeholder='funny bottom text here' maxLength={140} value={bottomText} onChange={handleBottomText} />
                     <span className='underline'></span>
                 </div>
                 <button className='btn-txt' onClick={() => handleClearText("bottom")}>X</button>
@@ -103,9 +89,6 @@ function Controls({ imgUrl, fontType, fontColor, fontSize, topText, bottomText, 
                     <button onClick={() => handleSize("+", fontSize)}>+</button>
                 </div>
             </div>
-
-
-            <button className='main-btn'>download</button>
         </div >
     )
 }

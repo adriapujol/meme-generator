@@ -20,7 +20,7 @@
         cursor: pointer;
 
         &:hover {
-            color: $pink;
+            color: $blue;
         }
     }
 
@@ -48,6 +48,22 @@ input[type=text] {
 
     &:focus {
         outline: none;        
+    }
+}
+
+input[type=file] {
+    display: none;
+}
+
+.file-uplad {
+    cursor: pointer;
+    font-size: 1.5rem;
+    // border: 4px solid $black;
+    padding: 0.5rem 1.5rem;
+
+    &:hover {
+        color: $blue;
+        // border: 4px solid $black;
     }
 }
 

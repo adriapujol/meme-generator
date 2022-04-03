@@ -23,7 +23,6 @@ function Memegen() {
                 fontType={fontType}
             />
             <Controls
-                imgUrl={imgUrl}
                 fontType={fontType}
                 fontColor={fontColor}
                 fontSize={fontSize}
