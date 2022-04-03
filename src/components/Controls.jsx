@@ -5,6 +5,12 @@ function Controls({ imgUrl, fontType, fontColor, fontSize, topText, bottomText, 
 
     const [tempUrl, setTempUrl] = useState("");
 
+    const handleFile = e => {
+        e.preventDefault();
+        const fileURL = URL.createObjectURL(e.target.files[0]);
+        setImgUrl(fileURL);
+    }
+
     const handleTempUrl = e => {
         e.preventDefault();
         setTempUrl(e.target.value);
@@ -49,8 +55,14 @@ function Controls({ imgUrl, fontType, fontColor, fontSize, topText, bottomText, 
 
     return (
         <div className='controls'>
-
             <div className="block">
+
+                <div className="input-box">
+                    <input type='file' id='img-file' name='img-file' onChange={handleFile} />
+                </div>
+            </div>
+            <div className="block">
+
                 <div className="input-box">
                     <input type='text' id='img-url' name='img-url' placeholder='enter image url' value={tempUrl} onChange={handleTempUrl} />
                     <span className='underline'></span>
