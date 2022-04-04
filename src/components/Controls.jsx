@@ -59,11 +59,11 @@ function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUr
                 <label htmlFor="img-file" className='file-upload'>
                     upload file
                 </label>
-                <p>{fileName}</p>
+                {/* <p>{fileName}</p> */}
                 <input type='file' id='img-file' name='img-file' onChange={handleFile} />
             </div>
             <div className="block">
-                <button className='btn-txt' onClick={handlePhoto}>take photo</button>
+                <button className='file-upload' onClick={handlePhoto}>take photo</button>
             </div>
             <div className="block">
                 <div className="input-box">

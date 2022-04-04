@@ -20,4 +20,4 @@ function TakePhoto({ setImgUrl, setShowCam }) {
     )
 }
 
-export default TakePhoto
+export default TakePhoto;
