@@ -1,0 +1,29 @@
+@import '../colors';
+@import '../mixins';
+
+.camera-wrap {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba($color: $black, $alpha: 0.8);
+
+    @include flex-center-col;
+
+}
+
+#outer-circle {
+    background-color: $black;
+    &:hover {
+        background-color: $blue;
+    }
+    
+    &:focus, &:active {
+        background-color: $pink;
+    }
+}
+#inner-circle {
+    background-color: $yellow;
+
+}

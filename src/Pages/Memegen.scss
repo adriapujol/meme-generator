@@ -1,10 +1,24 @@
 @import '../colors';
+@import '../mixins';
 
 .meme-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center-row;
     flex-wrap: wrap; 
+    margin: 2rem;
+
+    @media screen and (max-width: 1041px) {
+        &>div:first-child {
+            margin-bottom: 1rem;
+        }
+    }
+    div:first-child {
+        margin-right: 1rem;
+
+        @media screen and (max-width: 1041px) {
+            margin-right: 0rem;
+        }
+    }
+
 }
 
 .main-btn {

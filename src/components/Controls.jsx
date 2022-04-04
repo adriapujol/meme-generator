@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import TakePhoto from './TakePhoto';
 import './Controls.scss';
 
-function Controls({ imgUrl, fontType, fontColor, fontSize, topText, bottomText, setImgUrl, setFontType, setFontColor, setFontSize, setTopText, setBottomText }) {
+function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUrl, setFontType, setFontColor, setFontSize, setTopText, setBottomText }) {
 
-    const handleImgUrl = e => {
+    const [showCam, setShowCam] = useState(false);
+
+    const handlePhoto = () => {
+        setShowCam(true);
+    }
+
+    const handleFile = e => {
         e.preventDefault();
-        setImgUrl(e.taget.value);
+        const fileURL = URL.createObjectURL(e.target.files[0]);
+        setImgUrl(fileURL);
     }
     const handleType = font => {
         setFontType(font);
@@ -43,51 +51,54 @@ function Controls({ imgUrl, fontType, fontColor, fontSize, topText, bottomText, 
 
     return (
         <div className='controls'>
-
+            {showCam && <TakePhoto setImgUrl={setImgUrl} setShowCam={setShowCam} />}
             <div className="block">
                 <div className="input-box">
-                    <input type='text' id='img-url' name='img-url' placeholder='enter image url' value={imgUrl} onChange={handleImgUrl} />
-                    <span className='underline'></span>
+                    <label htmlFor="img-file" className='file-upload'>
+                        upload file
+                    </label>
+                    <input type='file' id='img-file' name='img-file' onChange={handleFile} />
                 </div>
-                <button className='btn-txt' onClick={handleImgUrl}>upload</button>
+                <div className="input-box">
+                    <button className='file-upload' onClick={handlePhoto}>take photo</button>
+                </div>
             </div>
             <div className="block">
                 <div className="input-box">
-                    <input type='text' id='top-text' name='top-text' placeholder='funny top text here' maxLength={140} value={topText} onChange={handleTopText} />
+                    <input type='text' id='top-text' name='top-text' autoComplete="off" placeholder='funny top text here' maxLength={140} value={topText} onChange={handleTopText} />
                     <span className='underline'></span>
                 </div>
                 <button className='btn-txt' onClick={() => handleClearText("top")}>X</button>
             </div>
             <div className="block">
                 <div className="input-box">
-                    <input type='text' id='bottom-text' name='bottom-text' placeholder='funny bottom text here' maxLength={140} value={bottomText} onChange={handleBottomText} />
+                    <input type='text' id='bottom-text' name='bottom-text' autoComplete="off" placeholder='funny bottom text here' maxLength={140} value={bottomText} onChange={handleBottomText} />
                     <span className='underline'></span>
                 </div>
                 <button className='btn-txt' onClick={() => handleClearText("bottom")}>X</button>
             </div>
             <div className="block">
-                <label htmlFor='font'>font:</label>
-                <div>
-                    <button className={fontType === "comicsans" ? "active" : ""} onClick={() => { handleType("comicsans") }}>comic sans</button>
-                    <button className={fontType === "arial" ? "active" : ""} onClick={() => { handleType("arial") }}>arial</button>
-                    <button className={fontType === "pacifico" ? "active" : ""} onClick={() => { handleType("pacifico") }}>pacifico</button>
+                <label htmlFor='font' className='values-title'>font:</label>
+                <div className='values-box'>
+                    <button className={fontType === "comicsans" ? "font-type active" : "font-type"} onClick={() => { handleType("comicsans") }}>comic sans</button>
+                    <button className={fontType === "arial" ? "font-type active" : "font-type"} onClick={() => { handleType("arial") }}>arial</button>
+                    <button className={fontType === "pacifico" ? "font-type active" : "font-type"} onClick={() => { handleType("pacifico") }}>pacifico</button>
                 </div>
             </div>
             <div className="block">
-                <label htmlFor='color'>color:</label>
-                <input type='color' value={fontColor} onChange={handleColor} />
+                <label htmlFor='color' className='values-title'>color:</label>
+                <div className="values-box">
+                    <input type='color' value={fontColor} onChange={handleColor} />
+                </div>
             </div>
             <div className="block">
-                <label htmlFor="font-size">font size:</label>
-                <div className="size-control">
+                <label htmlFor="font-size" className='values-title'>font size:</label>
+                <div className="size-control values-box">
                     <button onClick={() => handleSize("-", fontSize)}>-</button>
                     <span>{fontSize}</span>
                     <button onClick={() => handleSize("+", fontSize)}>+</button>
                 </div>
             </div>
-
-
-            <button className='main-btn'>download</button>
         </div >
     )
 }
