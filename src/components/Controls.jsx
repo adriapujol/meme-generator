@@ -13,7 +13,6 @@ function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUr
     const handleFile = e => {
         e.preventDefault();
         const fileURL = URL.createObjectURL(e.target.files[0]);
-        const tempFileName = e.target.files[0].name;
         setImgUrl(fileURL);
     }
     const handleType = font => {
@@ -64,8 +63,6 @@ function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUr
                     <button className='file-upload' onClick={handlePhoto}>take photo</button>
                 </div>
             </div>
-            {/* <div className="block"> */}
-            {/* </div> */}
             <div className="block">
                 <div className="input-box">
                     <input type='text' id='top-text' name='top-text' autoComplete="off" placeholder='funny top text here' maxLength={140} value={topText} onChange={handleTopText} />

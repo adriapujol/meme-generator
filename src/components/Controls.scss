@@ -97,15 +97,12 @@ input[type=text]:focus+.underline {
 }
 
 .values-title {
-    // flex-grow: 1;
-    // max-width: 150px;
     width: 25%;
 }
 
 .values-box {
-    width: 75%;
-    // flex-grow: 2;
     @include flex-center-row;
+    width: 75%;
 
     .font-type {
         margin-left: 1rem;
