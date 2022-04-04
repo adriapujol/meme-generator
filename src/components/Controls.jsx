@@ -4,7 +4,6 @@ import './Controls.scss';
 
 function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUrl, setFontType, setFontColor, setFontSize, setTopText, setBottomText }) {
 
-    const [fileName, setFileName] = useState("");
     const [showCam, setShowCam] = useState(false);
 
     const handlePhoto = () => {
@@ -15,7 +14,6 @@ function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUr
         e.preventDefault();
         const fileURL = URL.createObjectURL(e.target.files[0]);
         const tempFileName = e.target.files[0].name;
-        setFileName(tempFileName);
         setImgUrl(fileURL);
     }
     const handleType = font => {
@@ -56,15 +54,18 @@ function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUr
         <div className='controls'>
             {showCam && <TakePhoto setImgUrl={setImgUrl} setShowCam={setShowCam} />}
             <div className="block">
-                <label htmlFor="img-file" className='file-upload'>
-                    upload file
-                </label>
-                {/* <p>{fileName}</p> */}
-                <input type='file' id='img-file' name='img-file' onChange={handleFile} />
+                <div className="input-box">
+                    <label htmlFor="img-file" className='file-upload'>
+                        upload file
+                    </label>
+                    <input type='file' id='img-file' name='img-file' onChange={handleFile} />
+                </div>
+                <div className="input-box">
+                    <button className='file-upload' onClick={handlePhoto}>take photo</button>
+                </div>
             </div>
-            <div className="block">
-                <button className='file-upload' onClick={handlePhoto}>take photo</button>
-            </div>
+            {/* <div className="block"> */}
+            {/* </div> */}
             <div className="block">
                 <div className="input-box">
                     <input type='text' id='top-text' name='top-text' autoComplete="off" placeholder='funny top text here' maxLength={140} value={topText} onChange={handleTopText} />
@@ -80,20 +81,22 @@ function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUr
                 <button className='btn-txt' onClick={() => handleClearText("bottom")}>X</button>
             </div>
             <div className="block">
-                <label htmlFor='font'>font:</label>
-                <div>
-                    <button className={fontType === "comicsans" ? "active" : ""} onClick={() => { handleType("comicsans") }}>comic sans</button>
-                    <button className={fontType === "arial" ? "active" : ""} onClick={() => { handleType("arial") }}>arial</button>
-                    <button className={fontType === "pacifico" ? "active" : ""} onClick={() => { handleType("pacifico") }}>pacifico</button>
+                <label htmlFor='font' className='values-title'>font:</label>
+                <div className='values-box'>
+                    <button className={fontType === "comicsans" ? "font-type active" : "font-type"} onClick={() => { handleType("comicsans") }}>comic sans</button>
+                    <button className={fontType === "arial" ? "font-type active" : "font-type"} onClick={() => { handleType("arial") }}>arial</button>
+                    <button className={fontType === "pacifico" ? "font-type active" : "font-type"} onClick={() => { handleType("pacifico") }}>pacifico</button>
                 </div>
             </div>
             <div className="block">
-                <label htmlFor='color'>color:</label>
-                <input type='color' value={fontColor} onChange={handleColor} />
+                <label htmlFor='color' className='values-title'>color:</label>
+                <div className="values-box">
+                    <input type='color' value={fontColor} onChange={handleColor} />
+                </div>
             </div>
             <div className="block">
-                <label htmlFor="font-size">font size:</label>
-                <div className="size-control">
+                <label htmlFor="font-size" className='values-title'>font size:</label>
+                <div className="size-control values-box">
                     <button onClick={() => handleSize("-", fontSize)}>-</button>
                     <span>{fontSize}</span>
                     <button onClick={() => handleSize("+", fontSize)}>+</button>
