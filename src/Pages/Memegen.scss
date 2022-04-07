@@ -5,6 +5,7 @@
     @include flex-center-row;
     flex-wrap: wrap; 
     margin: 2rem;
+    width: 100%;
 
     @media screen and (max-width: 1041px) {
         &>div:first-child {

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import TakePhoto from './TakePhoto';
 import './Controls.scss';
+import photoIcon from '../img/dslr-camera.png';
+import uploadIcon from '../img/upload.png';
+
 
 function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUrl, setFontType, setFontColor, setFontSize, setTopText, setBottomText }) {
 
@@ -55,12 +58,16 @@ function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUr
             <div className="block">
                 <div className="input-box">
                     <label htmlFor="img-file" className='file-upload'>
+                        <img src={uploadIcon} className="icon" alt="Upload file" />
                         upload file
                     </label>
                     <input type='file' id='img-file' name='img-file' onChange={handleFile} />
                 </div>
                 <div className="input-box">
-                    <button className='file-upload' onClick={handlePhoto}>take photo</button>
+                    <button className='file-upload' onClick={handlePhoto}>
+                        <img src={photoIcon} className="icon" alt="Take photo" />
+                        take photo
+                    </button>
                 </div>
             </div>
             <div className="block">

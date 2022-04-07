@@ -109,6 +109,11 @@ input[type=text]:focus+.underline {
     }
 }
 
+.icon {
+    width: 25px;
+    height: 25px;
+}
+
 @keyframes hover-fatty {
     0% {
         transform: scale(1);
