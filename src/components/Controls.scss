@@ -35,8 +35,9 @@
         &:hover {
             color: $blue;
         }
-        &:active {
+        &:active, &:focus {
             color:$pink;
+            outline: none;
         }
     }
 
@@ -86,7 +87,7 @@ input[type=file] {
         color: $blue;
     }
 
-    &:active {
+    &:active, &:focus {
         color:$pink;
     }
 }
@@ -102,7 +103,7 @@ input[type=file] {
         background-size: 25px 25px;
     }
     
-    &:active {
+    &:active, &:focus {
         background: url('../img/dslr-camera-pink.png');
         background-repeat: no-repeat;
         background-size: 25px 25px;
@@ -119,7 +120,7 @@ input[type=file] {
         background-repeat: no-repeat;
         background-size: 25px 25px;
     }
-    &:active {
+    &:active, &:focus {
         background: url('../img/upload-pink.png');
         background-repeat: no-repeat;
         background-size: 25px 25px;

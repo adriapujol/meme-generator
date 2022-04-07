@@ -84,6 +84,11 @@ figure {
             color: $blue;
         }
 
+        &:active, &:focus {
+            color: $pink;
+            outline: none;
+        }
+
     }
 
 
@@ -102,10 +107,11 @@ figure {
             background-size: 25px 25px;
         }
         
-        &:active {
+        &:active, &:focus {
             background: url('../img/direct-download-pink.png');
             background-repeat: no-repeat;
             background-size: 25px 25px;
+            outline: none;
         }
     }
 
