@@ -61,7 +61,7 @@ function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUr
                         <img src={uploadIcon} className="icon" alt="Upload file" />
                         upload file
                     </label>
-                    <input type='file' id='img-file' name='img-file' onChange={handleFile} />
+                    <input type='file' id='img-file' name='img-file' onChange={handleFile} accept="image/png, image/gif, image/jpeg" />
                 </div>
                 <div className="input-box">
                     <button className='file-upload' onClick={handlePhoto}>
@@ -87,9 +87,9 @@ function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUr
             <div className="block">
                 <label htmlFor='font' className='values-title'>font:</label>
                 <div className='values-box'>
-                    <button className={fontType === "comicsans" ? "font-type active" : "font-type"} onClick={() => { handleType("comicsans") }}>comic sans</button>
-                    <button className={fontType === "arial" ? "font-type active" : "font-type"} onClick={() => { handleType("arial") }}>arial</button>
-                    <button className={fontType === "pacifico" ? "font-type active" : "font-type"} onClick={() => { handleType("pacifico") }}>pacifico</button>
+                    <button className={fontType === "comicsans" ? "font-type select-btn active" : "select-btn font-type"} onClick={() => { handleType("comicsans") }}>comic sans</button>
+                    <button className={fontType === "arial" ? "font-type select-btn active" : "select-btn font-type"} onClick={() => { handleType("arial") }}>arial</button>
+                    <button className={fontType === "pacifico" ? "font-type select-btn active" : "select-btn font-type"} onClick={() => { handleType("pacifico") }}>pacifico</button>
                 </div>
             </div>
             <div className="block">
