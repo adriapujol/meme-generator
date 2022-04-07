@@ -1,0 +1,48 @@
+@import '../colors';
+@import '../mixins';
+
+.landing {
+    @include  flex-center-col;
+
+    .title-box {
+        @include  flex-center-col;
+        margin-bottom: 3rem;
+        h1 {
+            font-family: 'Trade Winds', cursive;
+            font-size: 15rem;
+            letter-spacing: 0.5rem;
+            color: $pink;
+    
+            span {
+                font-family: 'Trade Winds', cursive;
+                color: $blue;
+            }
+        }
+
+        h3 {
+            margin-top: -5rem;
+            font-size: 4.7rem;
+            letter-spacing: 0.3rem;
+            position: relative;
+            z-index: 0;
+
+            &::before {
+                content: "generator";
+                color: $pink;
+                position: absolute;
+                left: -4px;
+                z-index: -2;
+                // z-index: 1;
+            }
+            &::after {
+                content: "generator";
+                color: $blue;
+                position: absolute;
+                right: -4px;
+                z-index: -1;
+                // z-index: 1;
+            }
+        }
+    }
+    
+}

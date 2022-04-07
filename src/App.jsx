@@ -7,8 +7,8 @@ function App() {
     return (
         <div className='container'>
             {/* <nav>About</nav> */}
-            {/* <Landing /> */}
-            <Memegen />
+            <Landing />
+            {/* <Memegen /> */}
             {/* <footer>by Adrià Pujol</footer> */}
         </div>
     )
