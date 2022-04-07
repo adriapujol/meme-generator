@@ -2,6 +2,11 @@
 @import '../mixins';
 
 .meme-box {
+    //for animation start
+    opacity: 0;
+    transform: translateY(3rem);
+
+    //proper elements styles
     @include flex-center-row;
     flex-wrap: wrap; 
     margin: 2rem;
@@ -30,6 +35,11 @@
     }
 
 }
+.appear {
+    animation: appear 400ms;
+    animation-delay: 500ms;
+    animation-fill-mode: forwards;
+}
 
 .main-btn {
     background-color: $pink;
@@ -51,4 +61,15 @@
 
 .active {
     color: $pink;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

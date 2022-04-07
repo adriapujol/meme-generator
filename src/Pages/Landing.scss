@@ -2,12 +2,17 @@
 @import '../mixins';
 
 .landing {
-    @include  flex-center-col;
-    height: 100vh;
+    // @include  flex-center-col;
+    // height: 100vh;
 
     .title-box {
         @include  flex-center-col;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         margin-bottom: 3rem;
+        
         h1 {
             font-family: 'Trade Winds', cursive;
             font-size: 15rem;
@@ -78,6 +83,15 @@
             }
         }
     }
+
+    button {
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 99;
+    }
+
     @media screen and (max-width: 540px) {
         button {
             font-size: 1.5rem;
@@ -85,4 +99,59 @@
         }
     }
     
+}
+
+.move {
+    animation: move 500ms;
+    animation-fill-mode: forwards;
+}
+
+.smaller {
+    animation: smaller 500ms;
+    animation-fill-mode: forwards;
+}
+
+.bye-smaller {
+    animation: bye-smaller 100ms;
+    animation-fill-mode: forwards;
+}
+
+.bye {
+    animation: bye 500ms;
+    animation-delay: 200ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes move {
+    100%{
+        top: 0%;
+        left: 0%;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes smaller {
+    100%{
+        font-size: 1rem;
+    }
+}
+
+@keyframes bye-smaller {
+    0% {
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        // font-size: 2rem;
+        font-size: 1rem;
+    }
+}
+
+@keyframes bye {
+    0% {
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
 }

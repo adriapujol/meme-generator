@@ -3,7 +3,7 @@ import Controls from '../components/Controls';
 import Image from '../components/Image';
 import './Memegen.scss';
 
-function Memegen() {
+function Memegen({ makeMeme }) {
 
     const [imgUrl, setImgUrl] = useState("");
     const [fontType, setFontType] = useState("arial");
@@ -13,7 +13,7 @@ function Memegen() {
     const [bottomText, setBottomText] = useState("");
 
     return (
-        <div className="meme-box">
+        <div className={makeMeme ? "appear meme-box" : "meme-box"}>
             <Image
                 imgUrl={imgUrl}
                 topText={topText}
