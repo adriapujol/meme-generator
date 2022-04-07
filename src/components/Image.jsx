@@ -56,9 +56,7 @@ function Image({ imgUrl, topText, bottomText, fontColor, fontSize, fontType }) {
     return (
         <div className='img-wrap'>
             <figure ref={refImage}>
-                {(existImage && imgUrl !== "") && <p style={style} className={`meme-top-text ${fontType}`}>{topText}</p>
-
-                }
+                <p style={style} className={`meme-top-text ${fontType}`}>{topText}</p>
                 <img src={imgUrl === "" ? picture2 : imgUrl} alt="to be memed" />
                 <p style={style} className={`meme-bottom-text ${fontType}`}>{bottomText}</p>
             </figure >

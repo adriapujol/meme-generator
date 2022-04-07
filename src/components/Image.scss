@@ -11,6 +11,7 @@ figure {
     @include flex-center-col;
     position: relative;
     margin-bottom: 0.5rem;
+    overflow: hidden;
     
     @media screen and (max-width: 1041px) {
         max-width: 500px;
@@ -45,18 +46,18 @@ figure {
         word-break: break-all;
     }
     .meme-top-text {
-        top: 1.5rem;
+        top: 5%;
 
-        @media screen and (max-width: 540px) {
-            top: 1rem;
-        }
+        // @media screen and (max-width: 540px) {
+        //     top: 1rem;
+        // }
     }
     .meme-bottom-text {
-        bottom: 1.5rem;
+        bottom: 5%;
 
-        @media screen and (max-width: 540px) {
-            bottom: 1rem;
-        }
+        // @media screen and (max-width: 540px) {
+        //     bottom: 1rem;
+        // }
     }
 
 }
@@ -85,10 +86,7 @@ figure {
 
     }
 
-    .active {
-        color: $pink;
-    }
-    
+
     .download-btn {
         width: 25px;
         height: 25px;
