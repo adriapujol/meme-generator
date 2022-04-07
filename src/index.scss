@@ -1,6 +1,12 @@
+@import './colors';
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Bangers', cursive;
+}
+
+body {
+    background-color: $yellow;
 }

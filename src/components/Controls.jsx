@@ -65,7 +65,7 @@ function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUr
                 </div>
                 <div className="input-box">
                     <button className='file-upload' onClick={handlePhoto}>
-                        <img src={photoIcon} className="icon" alt="Take photo" />
+                        <img src={photoIcon} className="icon" alt="Open camera" />
                         take photo
                     </button>
                 </div>
