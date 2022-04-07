@@ -3,6 +3,7 @@
 
 .landing {
     @include  flex-center-col;
+    height: 100vh;
 
     .title-box {
         @include  flex-center-col;
@@ -12,10 +13,23 @@
             font-size: 15rem;
             letter-spacing: 0.5rem;
             color: $pink;
+            
     
             span {
                 font-family: 'Trade Winds', cursive;
                 color: $blue;
+            }
+
+            @media screen and (max-width: 950px) {
+                font-size: 10rem;
+            }
+
+            @media screen and (max-width: 650px) {
+                font-size: 8rem;
+            }
+
+            @media screen and (max-width: 540px) {
+                font-size: 4.7rem;
             }
         }
 
@@ -26,13 +40,30 @@
             position: relative;
             z-index: 0;
 
+            @media screen and (max-width: 950px) {
+                margin-top: -3.5rem;
+                font-size: 3rem;
+            }
+            @media screen and (max-width: 650px) {
+                margin-top: -3rem;
+                font-size: 2.5rem;
+            }
+            
+            @media screen and (max-width: 540px) {
+                margin-top: -1.5rem;
+                font-size: 2rem;
+            }
+
             &::before {
                 content: "generator";
                 color: $pink;
                 position: absolute;
                 left: -4px;
                 z-index: -2;
-                // z-index: 1;
+
+                @media screen and (max-width: 650px) {
+                    left: -2px;
+                }
             }
             &::after {
                 content: "generator";
@@ -40,8 +71,17 @@
                 position: absolute;
                 right: -4px;
                 z-index: -1;
-                // z-index: 1;
+
+                @media screen and (max-width: 650px) {
+                    right: -2px;
+                }
             }
+        }
+    }
+    @media screen and (max-width: 540px) {
+        button {
+            font-size: 1.5rem;
+            padding: 0.8rem;
         }
     }
     
