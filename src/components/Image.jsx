@@ -1,36 +1,23 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './Image.scss';
+import errorImg from '../img/img-err.gif';
 import picture from '../img/buzz_woody.jpg';
-import picture2 from '../img/interesting_men.jpg';
-import downloadIcon from '../img/direct-download.png';
 import { useScreenshot, createFileName } from "use-react-screenshot";
 
 function Image({ imgUrl, topText, bottomText, fontColor, fontSize, fontType }) {
 
-    const [existImage, setExistImage] = useState(true);
     const [imgType, setImgType] = useState("jpeg");
 
     const refImage = useRef(null);
 
-    useEffect(() => {
-        // const currentWidth = refImage.current.offsetWidth;
-        const currentheight = refImage.current.offsetHeight;
-        console.log(currentheight);
-
-
-        if (currentheight < 150) {
-            console.log(currentheight);
-            setExistImage(false);
-        } else {
-            setExistImage(true);
-            console.log(currentheight);
-
-        }
-    }, [imgUrl]);
 
     const style = {
         color: fontColor,
         fontSize: `${fontSize}rem`
+    }
+
+    const handleImgErr = (e) => {
+        e.target.src = errorImg;
     }
 
     const handleImgType = type => {
@@ -44,7 +31,6 @@ function Image({ imgUrl, topText, bottomText, fontColor, fontSize, fontType }) {
 
 
     const generateMeme = (image, { name = "meme", extension = imgType } = {}) => {
-        console.log(refImage.current.offsetWidth);
         const a = document.createElement("a");
         a.href = image;
         a.download = createFileName(extension, name);
@@ -57,7 +43,7 @@ function Image({ imgUrl, topText, bottomText, fontColor, fontSize, fontType }) {
         <div className='img-wrap'>
             <figure ref={refImage}>
                 <p style={style} className={`meme-top-text ${fontType}`}>{topText}</p>
-                <img src={imgUrl === "" ? picture2 : imgUrl} alt="to be memed" />
+                <img src={imgUrl === "" ? picture : imgUrl} alt="to be memed" onError={handleImgErr} />
                 <p style={style} className={`meme-bottom-text ${fontType}`}>{bottomText}</p>
             </figure >
             <div className="download-box">

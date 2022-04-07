@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import TakePhoto from './TakePhoto';
 import './Controls.scss';
-import photoIcon from '../img/dslr-camera.png';
-import uploadIcon from '../img/upload.png';
 
 
 function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUrl, setFontType, setFontColor, setFontSize, setTopText, setBottomText }) {
@@ -58,16 +56,12 @@ function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUr
             <div className="block">
                 <div className="input-box">
                     <label htmlFor="img-file" className='file-upload upload-icon'>
-                        {/* <div className='upload-icon icon'></div> */}
-                        {/* <img src={uploadIcon} className="icon" alt="Upload file" /> */}
                         upload file
                     </label>
                     <input type='file' id='img-file' name='img-file' onChange={handleFile} accept="image/png, image/gif, image/jpeg" />
                 </div>
                 <div className="input-box">
                     <button className='file-upload photo-icon' onClick={handlePhoto}>
-                        {/* <div className='photo-icon icon'></div> */}
-                        {/* <img src={photoIcon} className="icon" alt="Open camera" /> */}
                         take photo
                     </button>
                 </div>
@@ -97,7 +91,7 @@ function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUr
             <div className="block">
                 <label htmlFor='color' className='values-title'>color:</label>
                 <div className="values-box">
-                    <input type='color' value={fontColor} onChange={handleColor} />
+                    <input type='color' id="color-picker" value={fontColor} onChange={handleColor} />
                 </div>
             </div>
             <div className="block">
