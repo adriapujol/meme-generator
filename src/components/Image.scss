@@ -13,6 +13,7 @@ figure {
     @media screen and (max-width: 1041px) {
         max-width: 500px;
         max-height: 500px;
+        
     }
 
     img {
@@ -23,7 +24,12 @@ figure {
 
         @media screen and (max-width: 1041px) {
             max-width: 500px;
-            max-height: 500px;
+            max-height: 400px;
+        }
+
+        @media screen and (max-width: 540px) {
+            max-width: 300px;
+            max-height: 250px;
         }
     }
 
@@ -34,9 +40,17 @@ figure {
     }
     .meme-top-text {
         top: 1.5rem;
+
+        @media screen and (max-width: 540px) {
+            top: 1rem;
+        }
     }
     .meme-bottom-text {
         bottom: 1.5rem;
+
+        @media screen and (max-width: 540px) {
+            bottom: 1rem;
+        }
     }
 
 }
