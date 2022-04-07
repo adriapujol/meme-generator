@@ -57,15 +57,17 @@ function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUr
             {showCam && <TakePhoto setImgUrl={setImgUrl} setShowCam={setShowCam} />}
             <div className="block">
                 <div className="input-box">
-                    <label htmlFor="img-file" className='file-upload'>
-                        <img src={uploadIcon} className="icon" alt="Upload file" />
+                    <label htmlFor="img-file" className='file-upload upload-icon'>
+                        {/* <div className='upload-icon icon'></div> */}
+                        {/* <img src={uploadIcon} className="icon" alt="Upload file" /> */}
                         upload file
                     </label>
                     <input type='file' id='img-file' name='img-file' onChange={handleFile} accept="image/png, image/gif, image/jpeg" />
                 </div>
                 <div className="input-box">
-                    <button className='file-upload' onClick={handlePhoto}>
-                        <img src={photoIcon} className="icon" alt="Open camera" />
+                    <button className='file-upload photo-icon' onClick={handlePhoto}>
+                        {/* <div className='photo-icon icon'></div> */}
+                        {/* <img src={photoIcon} className="icon" alt="Open camera" /> */}
                         take photo
                     </button>
                 </div>

@@ -35,6 +35,9 @@
         &:hover {
             color: $blue;
         }
+        &:active {
+            color:$pink;
+        }
     }
 
     div {
@@ -84,6 +87,45 @@ input[type=file] {
 
     &:hover {
         color: $blue;
+    }
+
+    &:active {
+        color:$pink;
+    }
+}
+
+.photo-icon {
+    background: url('../img/dslr-camera.png');
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+
+    &:hover {
+        background: url('../img/dslr-camera-blue.png');
+        background-repeat: no-repeat;
+        background-size: 25px 25px;
+    }
+    
+    &:active {
+        background: url('../img/dslr-camera-pink.png');
+        background-repeat: no-repeat;
+        background-size: 25px 25px;
+    }
+
+}
+.upload-icon {
+    background: url('../img/upload.png');
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+
+    &:hover {
+        background: url('../img/upload-blue.png');
+        background-repeat: no-repeat;
+        background-size: 25px 25px;
+    }
+    &:active {
+        background: url('../img/upload-pink.png');
+        background-repeat: no-repeat;
+        background-size: 25px 25px;
     }
 }
 
@@ -140,11 +182,15 @@ input[type=text]:focus+.underline {
     width: 25px;
     height: 25px;
 
-    @media screen and (max-width: 540px) {
-        width: 20px;
-        height: 20px;
-    }
+    // @media screen and (max-width: 540px) {
+    //     width: 20px;
+    //     height: 20px;
+    // }
 }
+
+
+
+
 
 @keyframes hover-fatty {
     0% {
