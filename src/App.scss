@@ -6,4 +6,8 @@
     width: 100%;
     background-color: $yellow;
     @include flex-center-row;
+
+    @media screen and (max-width: 540px) {
+        height: 100%;
+    }
 }

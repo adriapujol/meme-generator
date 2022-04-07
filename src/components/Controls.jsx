@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import TakePhoto from './TakePhoto';
 import './Controls.scss';
 
+
 function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUrl, setFontType, setFontColor, setFontSize, setTopText, setBottomText }) {
 
     const [showCam, setShowCam] = useState(false);
@@ -54,13 +55,15 @@ function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUr
             {showCam && <TakePhoto setImgUrl={setImgUrl} setShowCam={setShowCam} />}
             <div className="block">
                 <div className="input-box">
-                    <label htmlFor="img-file" className='file-upload'>
+                    <label htmlFor="img-file" className='file-upload upload-icon'>
                         upload file
                     </label>
-                    <input type='file' id='img-file' name='img-file' onChange={handleFile} />
+                    <input type='file' id='img-file' name='img-file' onChange={handleFile} accept="image/png, image/gif, image/jpeg" />
                 </div>
                 <div className="input-box">
-                    <button className='file-upload' onClick={handlePhoto}>take photo</button>
+                    <button className='file-upload photo-icon' onClick={handlePhoto}>
+                        take photo
+                    </button>
                 </div>
             </div>
             <div className="block">
@@ -80,15 +83,15 @@ function Controls({ fontType, fontColor, fontSize, topText, bottomText, setImgUr
             <div className="block">
                 <label htmlFor='font' className='values-title'>font:</label>
                 <div className='values-box'>
-                    <button className={fontType === "comicsans" ? "font-type active" : "font-type"} onClick={() => { handleType("comicsans") }}>comic sans</button>
-                    <button className={fontType === "arial" ? "font-type active" : "font-type"} onClick={() => { handleType("arial") }}>arial</button>
-                    <button className={fontType === "pacifico" ? "font-type active" : "font-type"} onClick={() => { handleType("pacifico") }}>pacifico</button>
+                    <button className={fontType === "comicsans" ? "font-type select-btn active" : "select-btn font-type"} onClick={() => { handleType("comicsans") }}>comic sans</button>
+                    <button className={fontType === "arial" ? "font-type select-btn active" : "select-btn font-type"} onClick={() => { handleType("arial") }}>arial</button>
+                    <button className={fontType === "pacifico" ? "font-type select-btn active" : "select-btn font-type"} onClick={() => { handleType("pacifico") }}>pacifico</button>
                 </div>
             </div>
             <div className="block">
                 <label htmlFor='color' className='values-title'>color:</label>
                 <div className="values-box">
-                    <input type='color' value={fontColor} onChange={handleColor} />
+                    <input type='color' id="color-picker" value={fontColor} onChange={handleColor} />
                 </div>
             </div>
             <div className="block">

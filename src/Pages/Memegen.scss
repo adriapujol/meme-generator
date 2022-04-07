@@ -5,10 +5,15 @@
     @include flex-center-row;
     flex-wrap: wrap; 
     margin: 2rem;
+    width: 100%;
 
     @media screen and (max-width: 1041px) {
         &>div:first-child {
             margin-bottom: 1rem;
+            
+            @media screen and (max-width: 540px) {
+                margin-bottom: 0.5rem;
+            }
         }
     }
     div:first-child {
@@ -17,6 +22,11 @@
         @media screen and (max-width: 1041px) {
             margin-right: 0rem;
         }
+    }
+
+    @media screen and (max-width: 540px) {
+        margin: 1rem;
+        margin-top: 2.5rem;
     }
 
 }
@@ -32,4 +42,13 @@
     &:hover {
         background-color: $blue;
     }
+
+    @media screen and (max-width: 540px) {
+        padding: 0.5rem 0.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+.active {
+    color: $pink;
 }

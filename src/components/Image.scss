@@ -1,4 +1,5 @@
 @import '../mixins';
+@import '../colors';
 
 .img-wrap {
     @include flex-center-col;
@@ -7,12 +8,20 @@
 figure {
     max-width: 600px;
     max-height: 500px;
+    min-width: 150px;
+    min-height: 150px;
     @include flex-center-col;
     position: relative;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
     
     @media screen and (max-width: 1041px) {
         max-width: 500px;
         max-height: 500px;
+    }
+
+    @media screen and (max-width: 540px) {
+        width: 100%;
     }
 
     img {
@@ -23,7 +32,11 @@ figure {
 
         @media screen and (max-width: 1041px) {
             max-width: 500px;
-            max-height: 500px;
+            max-height: 400px;
+        }
+
+        @media screen and (max-width: 540px) {
+            max-width: 100%;
         }
     }
 
@@ -33,10 +46,65 @@ figure {
         word-break: break-all;
     }
     .meme-top-text {
-        top: 1.5rem;
+        top: 3%;
     }
     .meme-bottom-text {
-        bottom: 1.5rem;
+        bottom: 3%;
+    }
+
+}
+
+.download-box {
+    @include flex-center-row;
+
+    .select-btn {
+        background-color: transparent;
+        font-size: 1.5rem;
+        border: none;
+        cursor: pointer;
+        margin-right: 0.5rem;
+
+        &:last-child {
+            margin-right: 1rem;
+        }
+
+        @media screen and (max-width: 540px) {
+            font-size: 1.2rem;
+        }
+
+        &:hover {
+            color: $blue;
+        }
+
+        &:active, &:focus {
+            color: $pink;
+            outline: none;
+        }
+
+    }
+
+
+    .download-btn {
+        width: 25px;
+        height: 25px;
+        border: none;
+        cursor: pointer;
+        background: url('../img/direct-download.png');
+        background-repeat: no-repeat;
+        background-size: 25px 25px;
+
+        &:hover {
+            background: url('../img/direct-download-blue.png');
+            background-repeat: no-repeat;
+            background-size: 25px 25px;
+        }
+        
+        &:active, &:focus {
+            background: url('../img/direct-download-pink.png');
+            background-repeat: no-repeat;
+            background-size: 25px 25px;
+            outline: none;
+        }
     }
 
 }
