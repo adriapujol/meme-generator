@@ -126,34 +126,15 @@
 }
 
 
-.move {
-    animation: move 500ms;
-    animation-fill-mode: forwards;
-}
 
 .smaller {
     animation: smaller 500ms;
     animation-fill-mode: forwards;
 }
 
-.bye-smaller {
-    animation: bye-smaller 100ms;
-    animation-fill-mode: forwards;
-}
 
-.bye {
-    animation: bye 500ms;
-    animation-delay: 200ms;
-    animation-fill-mode: forwards;
-}
 
-@keyframes move {
-    100%{
-        top: 0%;
-        left: 0%;
-        transform: translate(0, 0);
-    }
-}
+
 
 @keyframes smaller {
     100%{
@@ -166,23 +147,3 @@
     }
 }
 
-@keyframes bye-smaller {
-    0% {
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-        // font-size: 2rem;
-        font-size: 1rem;
-        display: none;
-    }
-}
-
-@keyframes bye {
-    0% {
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
-}
