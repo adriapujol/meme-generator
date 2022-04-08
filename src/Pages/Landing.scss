@@ -18,7 +18,7 @@
         bottom: 20%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 99;
+        z-index: 98;
     }
 
     @media screen and (max-width: 540px) {
@@ -159,6 +159,7 @@
     100%{
         font-size: 1rem;
         letter-spacing: 0;
+        position: fixed;
         top: 0.5rem;
         left: 0.5rem;
         transform: translate(0, 0);

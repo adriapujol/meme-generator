@@ -6,11 +6,16 @@
     opacity: 0;
     transform: translateY(3rem);
 
+    animation: appear 400ms;
+    animation-delay: 500ms;
+    animation-fill-mode: forwards;
+
     //proper elements styles
     @include flex-center-row;
     flex-wrap: wrap; 
     margin: 2rem;
     width: 100%;
+    
 
     @media screen and (max-width: 1041px) {
         &>div:first-child {
@@ -34,11 +39,6 @@
         margin-top: 2.5rem;
     }
 
-}
-.appear {
-    animation: appear 400ms;
-    animation-delay: 500ms;
-    animation-fill-mode: forwards;
 }
 
 .main-btn {

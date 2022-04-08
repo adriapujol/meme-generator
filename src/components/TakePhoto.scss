@@ -2,7 +2,7 @@
 @import '../mixins';
 
 .camera-wrap {
-    position: fixed;
+    position: absolute;
     height: 100vh;
     width: 100%;
     left: 0;
