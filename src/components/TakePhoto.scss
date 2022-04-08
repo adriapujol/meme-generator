@@ -11,6 +11,28 @@
 
     @include flex-center-col;
 
+    button {
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        background-color: transparent;
+        font-size: 2rem;
+        border: none;
+        cursor: pointer;
+        color: $white;
+
+        @media screen and (max-width: 540px) {
+            font-size: 1.2rem;
+        }
+
+        &:hover {
+            color: $blue;
+        }
+        &:active {
+            color:$pink;
+        }
+    }
+
 }
 
 
