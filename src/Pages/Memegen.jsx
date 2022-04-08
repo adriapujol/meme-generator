@@ -13,7 +13,7 @@ function Memegen({ makeMeme }) {
     const [bottomText, setBottomText] = useState("");
 
     return (
-        <div className={makeMeme ? "appear meme-box" : "meme-box"}>
+        <div className={makeMeme ? "meme-box" : "meme-box"}>
             <Image
                 imgUrl={imgUrl}
                 topText={topText}
