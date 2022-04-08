@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Landing.scss';
 
 function Landing({ makeMeme, setMakeMeme }) {

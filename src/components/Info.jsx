@@ -17,10 +17,10 @@ function Info({ showInfo, setShowInfo }) {
             </ul>
             <h2>Credits</h2>
             <ul>
-                <li>Design and coding by <a href="https://adriapujol.github.io/portfolio/" target="_blank">Adrià Pujol</a></li>
-                <li><a href="https://www.flaticon.com/free-icons/photography" title="photography icons">Photography icons created by Freepik - Flaticon</a></li>
-                <li><a href="https://www.flaticon.com/free-icons/file-upload" title="file upload icons">File upload icons created by Freepik - Flaticon</a></li>
-                <li><a href="https://www.flaticon.com/free-icons/direct-download" title="direct download icons">Direct download icons created by Pixel perfect - Flaticon</a></li>
+                <li>Design and coding by <a href="https://adriapujol.github.io/portfolio/" target="_blank" rel="noreferrer">Adrià Pujol</a></li>
+                <li><a href="https://www.flaticon.com/free-icons/photography" title="photography icons" target="_blank" rel="noreferrer">Photography icons created by Freepik - Flaticon</a></li>
+                <li><a href="https://www.flaticon.com/free-icons/file-upload" title="file upload icons" target="_blank" rel="noreferrer">File upload icons created by Freepik - Flaticon</a></li>
+                <li><a href="https://www.flaticon.com/free-icons/direct-download" title="direct download icons" target="_blank" rel="noreferrer">Direct download icons created by Pixel perfect - Flaticon</a></li>
             </ul>
             <button className='main-btn' onClick={handleCloseInfo}>got it!</button>
         </div>
