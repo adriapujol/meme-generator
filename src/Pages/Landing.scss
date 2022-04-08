@@ -40,6 +40,7 @@
         top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
+        
 
         span {
             font-family: 'Trade Winds', cursive;
@@ -57,12 +58,26 @@
         @media screen and (max-width: 540px) {
             font-size: 4.7rem;
         }
+        @media screen and (max-width: 280px) {
+            font-size: 3.7rem;
+        }
     }
     .subtitle {
         position: absolute;
         top: 58%;
         left: 50%;
         transform: translate(-50%, -50%);
+        @media screen and (max-width: 950px) {
+            top: 52%;
+        }
+        
+        @media screen and (max-width: 650px) {
+            top: 50%;
+        }
+
+        @media screen and (max-width: 540px) {
+            top: 50%;
+        }
     }
     h3 {
         margin-top: -5rem;
