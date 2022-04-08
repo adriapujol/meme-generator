@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Camera from 'react-html5-camera-photo';
+import Camera, { FACING_MODES } from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 import './TakePhoto.scss';
 
@@ -26,6 +26,8 @@ function TakePhoto({ setImgUrl, setShowCam }) {
             <button onClick={closeCam}>X</button>
             <Camera
                 onTakePhoto={(dataUri) => { handleTakePhoto(dataUri); }}
+                idealFacingMode={FACING_MODES.ENVIRONMENT}
+                isImageMirror={false}
             />
         </div>
     )
