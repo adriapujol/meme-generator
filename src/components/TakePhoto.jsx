@@ -5,7 +5,7 @@ import './TakePhoto.scss';
 
 function TakePhoto({ setImgUrl, setShowCam }) {
 
-    function handleTakePhoto(dataUri) {
+    const handleTakePhoto = (dataUri) => {
         setImgUrl(dataUri);
         setShowCam(false);
     }
@@ -16,9 +16,14 @@ function TakePhoto({ setImgUrl, setShowCam }) {
 
     }, [])
 
+    const closeCam = () => {
+        setShowCam(false);
+    }
+
 
     return (
         <div className="camera-wrap" id="camcam">
+            <button onClick={closeCam}>X</button>
             <Camera
                 onTakePhoto={(dataUri) => { handleTakePhoto(dataUri); }}
             />
