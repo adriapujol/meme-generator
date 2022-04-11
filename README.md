@@ -11,7 +11,7 @@ Meme template where you can put a text on top and/or bottom of the image. Upload
 - Chose text color.
 - Download it (JPEG, GIF, PNG).
 
-#### Dependencies
+### Dependencies
 
 - html2canvas
 - react-html5-camera-photo
