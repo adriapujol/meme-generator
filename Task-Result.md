@@ -16,6 +16,7 @@ I mainly used React because it allows for richer interfaces and the use of hooks
 I use the following 3rd party libraries in my project: 
 
 [react-html5-camera-photo](https://www.npmjs.com/package/react-html5-camera-photo) | For controling the camera from the device.
+
 [use-react-screenshot](https://www.npmjs.com/package/use-react-screenshot) and [html2canvas](https://www.npmjs.com/package/html2canvas) | For downloading the image with the caption.
 
 ## Installation / Run
