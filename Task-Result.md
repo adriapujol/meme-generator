@@ -24,8 +24,8 @@ I use the following 3rd party libraries in my project:
 To run the project locally, enter the following in the command line / bash:
 
 ```console
-$ git clone <linktorepository>
-$ cd <repositoryname>
+$ git clone https://github.com/adriapujol/meme-generator
+$ cd meme-generator
 $ npm install
 $ npm run start
 ```
