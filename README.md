@@ -18,5 +18,5 @@ Meme template where you can put a text on top and/or bottom of the image. Upload
 - use-react-screenshot
 
 
-### You can clone/fork the repository and run it with npm start
+### You can clone/fork the repository and npm install and run it with npm start
 
